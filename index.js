@@ -28,8 +28,8 @@ app.get("/api/names", function(req, res){
 });
 
 //send the name to the API using Post method (more secure than Get)
-app.post("/api/names", function(req, res, next){
-  console.log("hit route");
+app.post("/api/names", function(req, res){
+  console.log(req.body.data);
   res.redirect("/");
 });
 
