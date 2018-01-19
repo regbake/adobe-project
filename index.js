@@ -38,15 +38,14 @@ app.post("/api/names", function(req, res){
   let matchName = [req.body.data, "", ""];
 
   //send the info to the front
-  //
 
-  // res.render("index", {
-  //   city: " Seattle",
-  //   names: names.data.names,
-  //   matchName: matchName
-  // });
+  res.render("index", {
+    city: " Seattle",
+    names: names.data.names,
+    matchName: matchName
+  });
 
-  res.redirect("/");
+  // res.redirect("/");
 });
 
 

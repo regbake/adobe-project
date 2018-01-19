@@ -9,23 +9,22 @@
 
   <form action="/api/names" method="post">
     <input type="text" placeholder="Search for a name" name="data"/>
-    <button type="submit">Show data</button>
+    <button type="submit">Show names</button>
   </form>
 
-  <!-- <table>
+  <button onclick="showAllNames()">Show All Names</button>
+
+  <table id="allNameTable">
     <tr>
-      <th>Names!</th>
+      <th>All Names</th>
     </tr>
-    <% names.forEach(function(name){ %>
-      <tr>
-        <td><%= name %></td>
-      </tr>
-    <% }); %>
-  </table> -->
+
+
+  </table>
 
   <table>
     <tr>
-      <th>Matched names</th>
+      <th>Matched Names</th>
     </tr>
     <% matchName.forEach(function(name){ %>
       <tr>
@@ -35,11 +34,17 @@
   </table>
 
   <script>
+  function showAllNames(){
     $.ajax({
       url: "/api/names",
     }).done(function(data) {
-      console.log(data);
+      let names = data.data.data.names;
+
+      names.forEach(function(name){
+        $("#allNameTable").append("<tr><td>"+ name +"</td></tr>");
+      });
     });
+  }
   </script>
 </body>
 </html>
