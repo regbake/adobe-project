@@ -10,9 +10,14 @@ app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-//use fs to grab the json
+//use fs to grab the names from json
 var names = fs.readFileSync("./names.json");
 names = JSON.parse(names);
+
+//write a function to see if the names match...
+function matchNames() {
+
+}
 
 //for the default/home page
 app.get("/", function(req, res){
@@ -20,7 +25,7 @@ app.get("/", function(req, res){
   res.render("index", {
     city: " Seattle",
     names: names.data.names,
-    matchName: ["","",""]
+    matchName: []
   });
 });
 
@@ -33,6 +38,8 @@ app.post("/api/names", function(req, res){
   let matchName = [req.body.data, "", ""];
 
   //send the info to the front
+  //
+
   // res.render("index", {
   //   city: " Seattle",
   //   names: names.data.names,

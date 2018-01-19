@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>front end</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
   <h1>Greetings from  <%= city %></h1>
@@ -11,7 +12,7 @@
     <button type="submit">Show data</button>
   </form>
 
-  <table>
+  <!-- <table>
     <tr>
       <th>Names!</th>
     </tr>
@@ -20,7 +21,7 @@
         <td><%= name %></td>
       </tr>
     <% }); %>
-  </table>
+  </table> -->
 
   <table>
     <tr>
@@ -32,5 +33,13 @@
       </tr>
     <% }); %>
   </table>
+
+  <script>
+    $.ajax({
+      url: "/api/names",
+    }).done(function(data) {
+      console.log(data);
+    });
+  </script>
 </body>
 </html>
