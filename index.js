@@ -15,17 +15,28 @@ var names = fs.readFileSync("./names.json");
 names = JSON.parse(names);
 
 //write a function to see if the names match...
-function matchNames() {
+function matchNames(string) {
+  var nameArray = names.data.names;
+  var matchArray = [];
 
-}
+  nameArray.forEach(function(name){
+    var check = name.toLowerCase().includes(string);
+
+    if (check) {
+      matchArray.push(name);
+    }
+  });
+
+  return matchArray;
+};
+
+
 
 //for the default/home page
 app.get("/", function(req, res){
   //send the info to the front
   res.render("index", {
-    city: " Seattle",
-    names: names.data.names,
-    matchName: []
+    city: " Seattle"
   });
 });
 
@@ -35,14 +46,12 @@ app.get("/api/names", function(req, res){
 
 //send the name to the API using Post method (more secure than Get)
 app.post("/api/names", function(req, res){
-  let matchName = [req.body.data, "", ""];
+  let search = req.body.data;
 
-  //send the info to the front
+  //loop through names.json and return all entries that match the search param
 
   res.render("index", {
-    city: " Seattle",
-    names: names.data.names,
-    matchName: matchName
+    city: " Seattle"
   });
 });
 
