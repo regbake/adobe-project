@@ -12,10 +12,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 //for the default/home page
 app.get("/", function(req, res){
+  //use fs to grab the json
   var names = fs.readFileSync("./names.json");
   names = JSON.parse(names);
-  console.log(names.data.names)
 
+  //send the info to the front
   res.render("index", {
     city: " Seattle",
     names: names.data.names
