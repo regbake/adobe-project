@@ -24,9 +24,11 @@
     <tr>
       <th>Matched Names</th>
     </tr>
-    <tr>
-      <td>name</td>
-    </tr>
+    <% matches.forEach(function(name){ %>
+      <tr>
+        <td><%= name %></td>
+      </tr>
+    <% }); %>
   </table>
 
   <script>

@@ -19,8 +19,9 @@ function matchNames(string) {
   var nameArray = names.data.names;
   var matchArray = [];
 
+  //check if the name contains the search str
   nameArray.forEach(function(name){
-    var check = name.toLowerCase().includes(string);
+    var check = name.toLowerCase().includes(string.toLowerCase());
 
     if (check) {
       matchArray.push(name);
@@ -36,7 +37,8 @@ function matchNames(string) {
 app.get("/", function(req, res){
   //send the info to the front
   res.render("index", {
-    city: " Seattle"
+    city: " Seattle",
+    matches: [ ]
   });
 });
 
@@ -47,11 +49,13 @@ app.get("/api/names", function(req, res){
 //send the name to the API using Post method (more secure than Get)
 app.post("/api/names", function(req, res){
   let search = req.body.data;
+  let matches = matchNames(search);
 
-  //loop through names.json and return all entries that match the search param
+  console.log(search, matches);
 
   res.render("index", {
-    city: " Seattle"
+    city: " Seattle",
+    matches: matches
   });
 });
 
