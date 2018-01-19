@@ -44,8 +44,6 @@ app.post("/api/names", function(req, res){
     names: names.data.names,
     matchName: matchName
   });
-
-  // res.redirect("/");
 });
 
 
