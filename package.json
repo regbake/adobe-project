@@ -4,11 +4,12 @@
   "description": "APIs and testing with mocha, chai, and karma",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "chai"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.2"
   },
   "devDependencies": {
