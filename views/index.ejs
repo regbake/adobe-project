@@ -6,6 +6,12 @@
 <body>
   <h1>Greetings from  <%= city %></h1>
 
+  <ul>
+    <% names.forEach(function(name){ %>
+      <li><%= name %></li>
+    <% }); %>
+  </ul>
+
   <form>
     <input type="text" placeholder="Search for a name" />
     <button>Show data</button>

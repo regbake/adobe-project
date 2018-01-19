@@ -12,7 +12,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 //for the default/home page
 app.get("/", function(req, res){
-  res.render("index", {city: " Seattle"});
+  var names = fs.readFileSync("./names.json");
+  names = JSON.parse(names);
+  console.log(names.data.names)
+
+  res.render("index", {
+    city: " Seattle",
+    names: names.data.names
+  });
 });
 
 
