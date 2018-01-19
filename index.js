@@ -23,6 +23,15 @@ app.get("/", function(req, res){
   });
 });
 
+app.get("/api/names", function(req, res){
+  res.send({data: " Oakland??"});
+});
+
+//send the name to the API using Post method (more secure than Get)
+app.post("/api/names", function(req, res, next){
+  console.log("hit route");
+  res.redirect("/");
+});
 
 
 app.listen(3000);

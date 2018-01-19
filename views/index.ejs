@@ -6,20 +6,20 @@
 <body>
   <h1>Greetings from  <%= city %></h1>
 
-  <form>
+  <form action="/api/names" method="post">
     <input type="text" placeholder="Search for a name" />
-    <button>Show data</button>
+    <button type="submit">Show data</button>
   </form>
 
   <table>
     <tr>
       <th>Names!</th>
     </tr>
-      <% names.forEach(function(name){ %>
-        <tr>
-          <td><%= name %></td>
-        </tr>
-      <% }); %>
+    <% names.forEach(function(name){ %>
+      <tr>
+        <td><%= name %></td>
+      </tr>
+    <% }); %>
   </table>
 </body>
 </html>
