@@ -1,8 +1,5 @@
 module.exports = {
   matchNames: function(string, nameArray) {
-    // var nameArray = data.names;
-    console.log("nameArray", nameArray);
-
     var matchArray = [];
 
     //check if the name contains the search str

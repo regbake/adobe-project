@@ -33,14 +33,11 @@ app.post("/api/names", function(req, res){
   let search = req.body.data;
   let matches = matchNames(search, nameArray);
 
-  console.log(search, matches);
-
   res.render("index", {
     city: " Seattle",
     matches: matches
   });
 });
-
 
 app.listen(3000, function(){
   console.log("Listening on port 3000, yo!");
