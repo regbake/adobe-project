@@ -10,11 +10,11 @@
   <!-- Form to query all names for a match -->
   <form action="/api/names" method="post">
     <input type="text" placeholder="Search for a name" name="data"/>
-    <button type="submit">Show names</button>
+    <button type="submit">Match string</button>
   </form>
 
   <!-- Button to get all names -->
-  <button onclick="showAllNames()">Show All Names</button>
+  <button id="button">Display All Names</button>
 
   <!-- To display all names -->
   <table id="allNameTable">
@@ -36,6 +36,12 @@
   </table>
 
   <script>
+  //one-click button to query API
+  var button = document.getElementById("button");
+  button.addEventListener("click", function(e){
+    showAllNames()
+  }, {once: true});
+
   //to show all the names in the names.json file
   function showAllNames(){
     $.ajax({

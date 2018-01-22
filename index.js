@@ -20,7 +20,7 @@ app.get("/", function(req, res){
   //send the info to the front
   res.render("index", {
     city: " Seattle",
-    matches: [ ]
+    matches: []
   });
 });
 
