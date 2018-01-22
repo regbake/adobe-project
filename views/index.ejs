@@ -7,19 +7,23 @@
 <body>
   <h1>Greetings from  <%= city %></h1>
 
+  <!-- Form to query all names for a match -->
   <form action="/api/names" method="post">
     <input type="text" placeholder="Search for a name" name="data"/>
     <button type="submit">Show names</button>
   </form>
 
+  <!-- Button to get all names -->
   <button onclick="showAllNames()">Show All Names</button>
 
+  <!-- To display all names -->
   <table id="allNameTable">
     <tr>
       <th>All Names</th>
     </tr>
   </table>
 
+  <!-- To display names that present a match -->
   <table>
     <tr>
       <th>Matched Names</th>
@@ -32,9 +36,10 @@
   </table>
 
   <script>
+  //to show all the names in the names.json file
   function showAllNames(){
     $.ajax({
-      url: "/api/names",
+      url: "/api/names", //GET route
     }).done(function(data) {
       let names = data.data.data.names; //all names from backend
 
