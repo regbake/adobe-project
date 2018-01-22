@@ -26,19 +26,22 @@ module.exports = function(config){
     //continuous integration mode
     singleRun: false,
 
-    frameworks: ["mocha", "browserify"],
+    frameworks: ["mocha", "chai-http", "chai", "browserify"],
 
     browsers: ['Chrome', "Safari"],
 
     preprocessors: {
-      "test/*.js": ["browserify"]
+      "test/*.js": ["browserify"],
+      "*.js": ["browserify"]
     },
 
     plugins: [
       "karma-chrome-launcher",
       "karma-safari-launcher",
       "karma-mocha",
-      "karma-browserify"
+      "karma-browserify",
+      "karma-chai",
+      "karma-chai-http"
     ]
   });
 };

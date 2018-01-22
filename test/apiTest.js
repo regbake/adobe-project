@@ -55,4 +55,15 @@ describe("/POST API called by AJAX", function(){
         expect(err).to.have.status(500);
       });
   });
+
+  describe("/GET root route", function(){
+    it("should return html", function(){
+      return chai.request(app)
+        .get("/")
+        .then(function(res){
+          expect(res).to.be.html;
+          expect(res).to.have.status(200);
+        });
+    });
+  });
 });
