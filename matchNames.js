@@ -1,3 +1,5 @@
+//Function for matching query string with names.json
+
 module.exports = {
   matchNames: function(string, nameArray) {
     var matchArray = [];

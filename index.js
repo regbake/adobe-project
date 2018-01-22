@@ -7,7 +7,6 @@ const matchNames = require("./matchNames.js").matchNames; //separate function
 
 //to use ejs for templating
 app.set("view engine", "ejs");
-
 app.use(bodyParser.urlencoded({extended: false}));
 
 //use fs to grab the names from json
@@ -24,6 +23,7 @@ app.get("/", function(req, res){
   });
 });
 
+//names api
 app.get("/api/names", function(req, res){
   res.send({data: names});
 });

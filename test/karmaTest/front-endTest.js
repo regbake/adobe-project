@@ -3,7 +3,7 @@ const expect = require("chai").expect;
 const fs = require("fs");
 const $ = require("jquery");
 
-var names = ['Reggie', 'Mitchel', 'Justin', 'Ichiro']
+var names = ['Reggie', 'Mitchel', 'Justin', 'Ichiro'] //
 
 //spawn the test fixture
 beforeEach(function(){
@@ -23,11 +23,11 @@ afterEach(function(){
 
 describe("Front end testing", function(){
   describe("Test the All Names table, before adding names", function(){
-    xit("var names is array", function(){ //local array of names
+    it("var names is array", function(){ //local array of names
       expect(names).to.be.an("array");
     });
 
-    xit("Table has length 1", function(){ //before adding names
+    it("Table has length 1", function(){ //before adding names
       var table = document.getElementById("allNameTable");
 
       expect(table.rows.length).to.equal(1);
@@ -42,6 +42,26 @@ describe("Front end testing", function(){
         $("#allNameTable").append("<tr><td>"+ name +"</td></tr>");
       });
 
+      expect(table.rows.length).to.equal(5);
+    });
+  });
+
+  describe("Test button functionality", function(){
+    it("Click button once to add names to table", function(){
+      var button = document.getElementById("button");
+      var table = document.getElementById("allNameTable");
+
+      //add the event handler to the button
+      button.addEventListener("click", function(e){
+        names.forEach(function(name){
+          $("#allNameTable").append("<tr><td>"+ name +"</td></tr>");
+        });
+      }, {once: true});
+
+      expect(table.rows.length).to.equal(1);
+      button.click();
+      expect(table.rows.length).to.equal(5);
+      button.click(); //test the "Once: true" functionality, non compatible with safari
       expect(table.rows.length).to.equal(5);
     });
   });
