@@ -6,7 +6,7 @@ This is a Node/Express project to show API connectivity and testing (Unit and In
 
 Backend Unit tests are run with Mocha/Chai/Chai-http
 
-Run with "npm test" in root directory.
+You can run Unit tests with "npm test" in root directory.
 
 #Karma Test
 

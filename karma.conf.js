@@ -5,7 +5,7 @@ module.exports = function(config){
     files: [
       "./matchNames.js",
       "./test/matchNamesTest.js",
-      "./test/front-endTest.js"
+      "./test/karmaTest/front-endTest.js"
     ],
 
     autoWatch: true,
@@ -27,7 +27,8 @@ module.exports = function(config){
 
     preprocessors: {
       "test/*.js": ["browserify"],
-      "*.js": ["browserify"]
+      "*.js": ["browserify"],
+      "test/karmaTest/*.js": ["browserify"]
     },
 
     plugins: [

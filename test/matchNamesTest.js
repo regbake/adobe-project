@@ -1,14 +1,19 @@
 const assert = require("assert");
+const expect = require("chai").expect;
 const matchNames = require("../matchNames").matchNames;
 
 //match names in the array of names
-matchNamesResult = matchNames("a", ["a", "b", "c"]);
+var matchNamesResult = matchNames("a", ["a", "ab", "c"]);
 
 describe("Test the name matching function", function(){
   describe("Returns matched names from array", function(){
-    it("should equal 'a'", function(){
-      assert.equal(matchNamesResult, "a");
-      //check type array
+    it("should equal 'a' and 'ab'", function(){
+      assert.equal(matchNamesResult[0], "a");
+      assert.equal(matchNamesResult[1], "ab");
     });
+
+    it("should be an array", function(){
+      expect(matchNamesResult).to.be.an("array");
+    })
   });
 });
