@@ -37,7 +37,22 @@ describe("/POST API called by AJAX", function(){
       })
       .then(function(res){
         expect(res).to.have.status(200);
-        expect(res).to.html; //return html
+        expect(res).to.be.html; //return html
+      });
+  });
+
+  xit("Bad request", function(){
+    return chai.request(app)
+      .post("/api/names")
+      .send({
+        data: "Reg"
+      })
+      .then(function(res){
+        expect(res).to.be.html; //return html
+        throw new Error("Not form data");
+      })
+      .catch(function(err){
+        expect(err).to.have.status(500);
       });
   });
 });
