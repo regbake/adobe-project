@@ -4,7 +4,8 @@ module.exports = function(config){
 
     files: [
       "./matchNames.js",
-      "./test/matchNamesTest.js"
+      "./test/matchNamesTest.js",
+      "./test/front-endTest.js"
     ],
 
     autoWatch: true,

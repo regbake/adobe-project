@@ -48,7 +48,7 @@
       url: "/api/names", //GET route
     }).done(function(data) {
       let names = data.data.data.names; //all names from backend
-
+    
       names.forEach(function(name){
         $("#allNameTable").append("<tr><td>"+ name +"</td></tr>");
       });
