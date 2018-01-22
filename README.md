@@ -5,15 +5,14 @@ This is a Node/Express project to show API connectivity and testing (Unit and In
 File Structure:
 
   Root/
+  
     --/test/
     ----/apiTest.js (backend unit tests)
     ----/matchNamesTest.js (function unit test)
     ----/karmaTest/
     ------/front-endTest.js (front end integration test)
-
     --/views/
     ----/index.ejs (client)
-
     --/index.js (server)
     --/matchNames.js (function module)
     --/names.json (names array)
