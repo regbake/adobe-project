@@ -5,7 +5,7 @@ This is a Node/Express project to show API connectivity and testing (Unit and In
 File Structure:
 
   Root/
-  
+
     --/test/
     ----/apiTest.js (backend unit tests)
     ----/matchNamesTest.js (function unit test)
@@ -21,12 +21,15 @@ File Structure:
 # Server
 
 GET "/", root route
+
 GET route "/api/names" to access names array
+
 POST route "/api/names" to match string with name
 
 # Client
 
 A button to query the Names API and return all names.
+
 A form to search for name matches based on string.
 
 # Testing
