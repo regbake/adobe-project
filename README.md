@@ -47,7 +47,7 @@ Run with "karma start" in root directory.
 
 # Comments
 
-The {once: true} parameter for the .addEventListener is not supported in Safari.
+The {once: true} parameter for the .addEventListener is not supported in Safari. --> This is a failing test. 
 
 # Future work
 
