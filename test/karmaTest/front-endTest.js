@@ -1,9 +1,8 @@
 const chai = require("chai");
 const expect = require("chai").expect;
-const fs = require("fs");
 const $ = require("jquery");
 
-var names = ['Reggie', 'Mitchel', 'Justin', 'Ichiro'] //
+var names = ['Reggie', 'Mitchel', 'Justin', 'Ichiro'] //declared local
 
 //spawn the test fixture
 beforeEach(function(){
@@ -34,6 +33,7 @@ describe("Front end testing", function(){
     });
   });
 
+  //after inserting 4 names
   describe("After inserting names", function(){
     it("Table has length 5", function(){
       var table = document.getElementById("allNameTable");
